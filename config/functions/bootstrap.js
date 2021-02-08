@@ -19,10 +19,15 @@ const git = simpleGit(options);
 
 module.exports = async () => {
   strapi.log.info('TEST INIT')
+  const GIT_SSH_COMMAND = "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no";
 
   // Clone repo
   try { 
-    await git.cwd('~').clone(process.env.GITHUB_REPO_TO_CLONE, REPO_NAME);
+    await git
+      .env('GIT_SSH_COMMAND', GIT_SSH_COMMAND)
+      .addConfig('user.name', 'MLH-Fellowship')
+      .addConfig('user.email', 'fellowship@mlh.io')
+      .cwd('~/').clone(process.env.GITHUB_REPO_TO_CLONE, REPO_NAME);
     strapi.log.info('CLONED');
   } catch(e) {
     strapi.log.info('NOT CLONED', e);
