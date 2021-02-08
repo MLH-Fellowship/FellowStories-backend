@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/authorized-fellows",
+      "handler": "authorized-fellow.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/authorized-fellows/count",
+      "handler": "authorized-fellow.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/authorized-fellows/:id",
+      "handler": "authorized-fellow.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/authorized-fellows",
+      "handler": "authorized-fellow.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/authorized-fellows/:id",
+      "handler": "authorized-fellow.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/authorized-fellows/:id",
+      "handler": "authorized-fellow.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

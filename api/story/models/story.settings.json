@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stories",
+  "info": {
+    "name": "Story",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "filename": {
+      "type": "string",
+      "required": false,
+      "unique": false
+    },
+    "author": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "stories"
+    },
+    "views": {
+      "type": "integer",
+      "default": 0
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "text"
+    }
+  }
+}

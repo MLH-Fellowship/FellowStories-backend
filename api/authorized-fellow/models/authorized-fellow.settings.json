@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "authorized_fellows",
+  "info": {
+    "name": "AuthorizedFellow",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "email": {
+      "type": "email",
+      "unique": true
+    }
+  }
+}
