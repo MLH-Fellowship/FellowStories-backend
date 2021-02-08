@@ -21,7 +21,7 @@ module.exports = async () => {
   strapi.log.info('TEST INIT')
 
   // Clone repo
-  try {
+  try { 
     await git.cwd('~').clone(process.env.GITHUB_REPO_TO_CLONE, REPO_NAME);
     strapi.log.info('CLONED');
   } catch(e) {
