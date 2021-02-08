@@ -3,7 +3,7 @@ const simpleGit = require('simple-git');
 
 const REPO_NAME = 'fellow-clone';
 const options = {
-  baseDir: process.cwd(`../${REPO_NAME}`),
+  baseDir: process.cwd(`~/${REPO_NAME}`),
 }
 const git = simpleGit(options);
 
@@ -22,7 +22,7 @@ module.exports = async () => {
 
   // Clone repo
   try {
-    await git.cwd('..').clone(process.env.GITHUB_REPO_TO_CLONE, REPO_NAME);
+    await git.cwd('~').clone(process.env.GITHUB_REPO_TO_CLONE, REPO_NAME);
     strapi.log.info('CLONED');
   } catch(e) {
     strapi.log.info('NOT CLONED', e);

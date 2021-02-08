@@ -32,11 +32,11 @@ ${ctx.request.body.content}
 `
       const filename = `${current_date.substr(0, 10)}-${uuidv4()}.md`;
       // TODO: Push markdown to GitHub
-      fs.writeFile(`../${REPO_NAME}/stories/${filename}`, markdown, function (err) {
+      fs.writeFile(`~/${REPO_NAME}/stories/${filename}`, markdown, function (err) {
         if (err) throw err
       });
       await git
-        .cwd(`../${REPO_NAME}`)
+        .cwd(`~/${REPO_NAME}`)
         .pull()
         .add(`./stories/${filename}`)
         .commit(`Add: New story by ${ctx.state.user.email}`)
